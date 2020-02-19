@@ -18,12 +18,7 @@ The dataset is partitioned in /dataset/output in parquet format.
 `pip install pandas pyarrow`
 
 ```
-import pandas as pd
-import pyarrow.parquet as pq
-import glob
+from dataset import dataframe
 
-paths = glob.glob("dataset/output/*/*.parquet")
-dataset = pq.ParquetDataset(paths)
-table = dataset.read()
-df = df[['word', 'definition', 'score']]
+df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])
 ```
