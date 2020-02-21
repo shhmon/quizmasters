@@ -3,8 +3,10 @@ from flask_restful import Resource, Api
 from dataset import dataframe
 from random import randint
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])

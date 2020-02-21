@@ -2,3 +2,4 @@ flask
 flask-restful
 pandas
 pyarrow
+flask_cors
