@@ -23,6 +23,13 @@ from dataset import dataframe
 df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])
 ```
 
+**Run the API:**
+
+Attach parenthesis if running first time
+
+`docker-compose up (--build --force-recreate) server`
+
+
 
 **How to build angular application:**
 - npm install -g @angular/cli
