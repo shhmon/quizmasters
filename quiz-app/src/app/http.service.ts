@@ -9,6 +9,8 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   fetchData(){
-    return console.log("heyy");
+    return this.http.get('http://localhost:5000/').subscribe(data =>{
+      console.log(data)
+    });
   }
 }

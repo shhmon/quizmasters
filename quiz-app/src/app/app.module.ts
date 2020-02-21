@@ -6,7 +6,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSliderModule } from "@angular/material/slider";
-import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +15,6 @@ import { HttpService } from './http.service';
     BrowserAnimationsModule,
     MatSliderModule,
     HttpClientModule,
-    HttpService
   ],
   providers: [],
   bootstrap: [AppComponent]
