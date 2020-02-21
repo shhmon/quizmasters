@@ -22,3 +22,10 @@ from dataset import dataframe
 
 df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])
 ```
+
+
+**How to build angular application:**
+- npm install -g @angular/cli
+- npm install
+- ng update
+- ng serve --open
