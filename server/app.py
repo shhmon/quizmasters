@@ -15,11 +15,11 @@ df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])
 class Question(Resource):
     def get(self):
         result = {}
-        indexes = [randint(0, df.shape[0]) for _ in range(3)]
+        indexes = [randint(0, df.shape[0]) for _ in range(4)]
         result['words'] = [df.iloc[i]['word'] for i in indexes]
-        result['definition'] = df.iloc[indexes[2]]['definition']
-        result['answer'] = df.iloc[indexes[2]]['word']
-        result['score'] = df.iloc[indexes[2]]['score']
+        result['definition'] = df.iloc[indexes[3]]['definition']
+        result['answer'] = df.iloc[indexes[3]]['word']
+        result['score'] = df.iloc[indexes[3]]['score']
 
         return jsonify(result)
 
