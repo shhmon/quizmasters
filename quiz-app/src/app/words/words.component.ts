@@ -23,7 +23,9 @@ export class WordsComponent implements OnInit {
 
 
   handleClick(event){
-		this.guess = event.currentTarget.value;
+		if (!this.guess) {
+			this.guess = event.currentTarget.value;
+		}
   }
 
 }
