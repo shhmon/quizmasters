@@ -1,15 +1,22 @@
 <div class="main" >
-  <div class="buttons">
+  <div class="words">
+    <div class="definition">
+      <mat-card class="definition-card">
+      <mat-card-content>
+        <p>{{ words.definition }}</p>
+      </mat-card-content>
+    </mat-card>
+    </div>
     <div>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="secondary"
+              mat-raised-button color="accent"
               class="button">
               {{ words.words[0] }}
       </button>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="secondary"
+              mat-raised-button color="accent"
               class="button">
               {{ words.words[1] }}
       </button>
@@ -17,23 +24,17 @@
     <div>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="secondary"
+              mat-raised-button color="accent"
               class="button">
               {{ words.words[2] }}
       </button>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="secondary"
+              mat-raised-button color="accent"
               class="button">
               {{ words.words[2] }}
       </button>
     </div>
-    <div class="defenition">
-      <mat-card class="definition-card">
-      <mat-card-content>
-        <p>{{ words.definition }}</p>
-      </mat-card-content>
-    </mat-card>
-    </div>
+
   </div>
 </div>
