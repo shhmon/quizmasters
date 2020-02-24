@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <svg-icon
+      src="../../assets/logo.svg"
+      [svgStyle]="{ 'height.px': 50 }"
+    ></svg-icon>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>emoji_events</mat-icon>
+      <span>Highscores</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
