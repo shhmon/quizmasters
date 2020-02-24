@@ -3,33 +3,37 @@
     <div>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="warn"
+              mat-raised-button color="secondary"
               class="button">
-              Alternativ 1
+              {{ words.words[0] }}
       </button>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="warn"
+              mat-raised-button color="secondary"
               class="button">
-              Alternativ 1
+              {{ words.words[1] }}
       </button>
     </div>
     <div>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="warn"
+              mat-raised-button color="secondary"
               class="button">
-              Alternativ 1
+              {{ words.words[2] }}
       </button>
       <button
               (click)="handleClick($event)"
-              mat-raised-button color="warn"
+              mat-raised-button color="secondary"
               class="button">
-              Alternativ 1
+              {{ words.words[2] }}
       </button>
     </div>
     <div class="defenition">
-      <label> {{ words.score }} </label>
+      <mat-card class="definition-card">
+      <mat-card-content>
+        <p>{{ words.definition }}</p>
+      </mat-card-content>
+    </mat-card>
     </div>
   </div>
 </div>
