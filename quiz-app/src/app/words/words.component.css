@@ -5,7 +5,7 @@
 .button{
   margin-right: 15px;
   margin-bottom: 15px;
-  width: 243px;
+  width: 249px;
 }
 
 .words{
@@ -14,6 +14,8 @@
 .definition{
   width: 500px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: bold;
 }
 .definition-card{
   background-color: #FFD740;

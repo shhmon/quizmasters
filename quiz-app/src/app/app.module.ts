@@ -18,9 +18,10 @@ import { AppComponent } from "./app.component";
 import { WordsComponent } from "./words/words.component";
 import { HeaderComponent } from "./header/header.component";
 import { MatCardModule } from "@angular/material/card";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, WordsComponent, HeaderComponent],
+  declarations: [AppComponent, WordsComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
