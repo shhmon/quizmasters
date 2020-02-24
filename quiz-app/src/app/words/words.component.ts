@@ -8,7 +8,9 @@ import { HttpService } from '../http.service';
 })
 export class WordsComponent implements OnInit {
 
-  constructor(private http: HttpService){}
+  constructor(private http: HttpService){
+    this.handleClick = this.handleClick.bind(this);
+  }
 
   words = {words:[], definition:String, answer:String, score:Number}
 
@@ -19,10 +21,14 @@ export class WordsComponent implements OnInit {
     }
 
 
-
-
   handleClick(event){
-
+    
+    if(event.currentTarget.value === this.words.answer){
+      
+      return true;
+    }
+    
+    return false;
   }
 
 }
