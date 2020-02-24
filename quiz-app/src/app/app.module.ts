@@ -10,6 +10,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
+import { MatGridListModule } from '@angular/material/grid-list';
 
 // App
 import { AppRoutingModule } from "./app-routing.module";
@@ -30,7 +31,8 @@ import { MatCardModule } from "@angular/material/card";
     AngularSvgIconModule.forRoot(),
     MatMenuModule,
     MatIconModule,
-    MatCardModule
+		MatCardModule,
+		MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

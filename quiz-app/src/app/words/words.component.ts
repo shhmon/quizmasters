@@ -10,25 +10,20 @@ export class WordsComponent implements OnInit {
 
   constructor(private http: HttpService){
     this.handleClick = this.handleClick.bind(this);
-  }
+	}
 
-  words = {words:[], definition:String, answer:String, score:Number}
+	question = {words:[], definition:String, answer:String, score:Number}
+	guess : String;
 
   ngOnInit(): void {
       this.http.fetchData().subscribe(data => {
-        this.words = JSON.parse(JSON.stringify(data));
+				this.question = JSON.parse(JSON.stringify(data));
       })
     }
 
 
   handleClick(event){
-    
-    if(event.currentTarget.value === this.words.answer){
-      
-      return true;
-    }
-    
-    return false;
+		this.guess = event.currentTarget.value;
   }
 
 }

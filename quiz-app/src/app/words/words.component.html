@@ -3,47 +3,22 @@
     <div class="definition">
       <mat-card class="definition-card">
       <mat-card-content>
-        <p>{{ words.definition }}</p>
+        <p>{{ question.definition }}</p>
       </mat-card-content>
     </mat-card>
     </div>
-    <div>
-      <button
-              (click)="handleClick($event)"
-              mat-raised-button color="accent"
-              value= "{{this.words.words[0]}}"
-              class="button"
-              
-              >
-              {{ words.words[0] }}
-      </button>
-      <button
-              (click)="handleClick($event)"
-              mat-raised-button color="accent"
-              class="button"
-              value= "{{this.words.words[1]}}"
-              >
-              {{ words.words[1] }}
-      </button>
-    </div>
-    <div>
-      <button
-              (click)="handleClick($event)"
-              mat-raised-button color="accent"
-              class="button"
-              value= "{{this.words.words[2]}}"
-              >
-              {{ words.words[2] }}
-      </button>
-      <button
-              (click)="handleClick($event)"
-              mat-raised-button color="accent"
-              class="button"
-              value= "{{this.words.words[2]}}"
-              >
-              {{ words.words[2] }}
-      </button>
-    </div>
-
+    <mat-grid-list cols="2" rowHeight="8:2">
+			<mat-grid-tile *ngFor="let word of this.question.words">
+				<button
+					(click)="handleClick($event)"
+					mat-raised-button
+					class="button"
+					value="{{ word }}"
+					color="{{ this.guess ? (this.question.answer === word ? 'primary' : this.guess === word ? 'warn' : 'accent') : 'accent' }}"
+				>
+					{{ word }}
+				</button>
+			</mat-grid-tile>
+    </mat-grid-list>
   </div>
 </div>
