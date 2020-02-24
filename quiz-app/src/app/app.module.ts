@@ -5,16 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatSliderModule } from "@angular/material/slider";
+import {MatButtonModule} from '@angular/material/button';
+import { WordsComponent } from './words/words.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WordsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule,
     HttpClientModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
