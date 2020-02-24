@@ -5,3 +5,15 @@
 .mat-button-wrapper {
   height: 60px;
 }
+
+.mat-toolbar {
+  background-color: #4527a0;
+}
+
+.mat-icon {
+  color: #ffffff;
+}
+
+.menu-icon {
+  color: #ffd740;
+}

@@ -16,6 +16,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { WordsComponent } from "./words/words.component";
 import { HeaderComponent } from "./header/header.component";
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [AppComponent, WordsComponent, HeaderComponent],
@@ -28,7 +29,8 @@ import { HeaderComponent } from "./header/header.component";
     MatToolbarModule,
     AngularSvgIconModule.forRoot(),
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

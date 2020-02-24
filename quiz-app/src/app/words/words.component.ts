@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
-import { wordDefenition } from './wordDefenition';
 
 @Component({
   selector: 'app-words',
@@ -9,22 +8,27 @@ import { wordDefenition } from './wordDefenition';
 })
 export class WordsComponent implements OnInit {
 
-  constructor(private http: HttpService){}
+  constructor(private http: HttpService){
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  words = {words:[], defenition:String, answer:String, score:Number}
+  words = {words:[], definition:String, answer:String, score:Number}
 
   ngOnInit(): void {
       this.http.fetchData().subscribe(data => {
         this.words = JSON.parse(JSON.stringify(data));
-        console.log(typeof(this.words));
       })
     }
 
 
-
-
   handleClick(event){
-
+    
+    if(event.currentTarget.value === this.words.answer){
+      
+      return true;
+    }
+    
+    return false;
   }
 
 }

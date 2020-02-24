@@ -5,11 +5,16 @@
 .button{
   margin-right: 15px;
   margin-bottom: 15px;
+  width: 243px;
 }
 
-.buttons{
+.words{
   margin: auto;
 }
 .definition{
-  width: 200px;
+  width: 500px;
+  margin-bottom: 20px;
+}
+.definition-card{
+  background-color: #FFD740;
 }
