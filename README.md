@@ -5,10 +5,20 @@
 - [x] Convert urbandict dataset to desired format:
   - [ word_id, word, up_votes, down_votes, definition, score ]
   - score column desribes "normalized" ratio between up and down votes (0 = 50% up votes, 1 = 100% up votes)
-- [ ] Wrap this all up in some sexy docker build
-- [ ] Create REST API to serve the data (Python/Express?)
+- [x] Create REST API to serve the data (Flask)
+- [x] Wrap this all up in some sexy docker build
 - [ ] Create quiz application with Angular:
   - Get definition of word => fetch three similar (or just random) words for user to choose between => get score for guessing right based on up/down vote ratio
+
+**Start the app and server**
+
+Run the whole stack at http://localhost:
+
+`docker-compose up`
+
+If you encounter any errors after a pull, run this instead:
+
+`docker-compose up --build --force-recreate server quiz-app`
 
 
 **How to handle the dataset:**
@@ -22,17 +32,3 @@ from dataset import dataframe
 
 df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])
 ```
-
-**Run the API:**
-
-Attach parenthesis if running first time
-
-`docker-compose up (--build --force-recreate) server`
-
-
-
-**How to build angular application:**
-- npm install -g @angular/cli
-- npm install
-- ng update
-- ng serve --open
