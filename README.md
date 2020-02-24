@@ -12,7 +12,7 @@
 
 **Start the app and server**
 
-Run the whole stack:
+Run the whole stack at http://localhost:
 
 `docker-compose up`
 
