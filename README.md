@@ -20,6 +20,10 @@ If you encounter any errors after a pull, run this instead:
 
 `docker-compose up --build --force-recreate server quiz-app`
 
+If you have trouble with node packages not being installed in the container:
+
+`docker exec -t -i quizmasters_quiz-app_1 npm install`
+
 
 **How to handle the dataset:**
 
