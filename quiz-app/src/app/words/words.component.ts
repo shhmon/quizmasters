@@ -22,10 +22,10 @@ export class WordsComponent implements OnInit {
       })
     }
 
-
   handleClick(event){
 		this.guess = event.currentTarget.value;
     this.round+=1;
+    setTimeout(() => {
+    this.ngOnInit()}, 1000);
   }
-
 }
