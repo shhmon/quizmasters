@@ -1,31 +1,31 @@
-.main{
+.main {
   align-items: center;
   display: flex;
 }
-.button{
+.button {
   margin-right: 15px;
   margin-bottom: 15px;
   width: 249px;
 }
 
-.words{
+.words {
   margin: auto;
 }
-.definition{
+.definition {
   width: 500px;
   margin-bottom: 20px;
   margin-top: 20px;
   font-weight: bold;
 }
-.definition-card{
-  background-color: #FFD740;
+.definition-card {
+  background-color: #ffd740;
 }
 
 /* Success styling */
 
 .mat-button.mat-success,
 .mat-stroked-button.mat-success {
-    color: #155724;
+  color: #155724;
 }
 .mat-button.mat-success:hover,
 .mat-stroked-button.mat-success:hover {
@@ -41,14 +41,14 @@
 }
 
 .mat-icon-button.mat-success {
-  color:#155724;
+  color: #155724;
 }
-.round-card{
+.round-card {
   width: 80px;
   height: 55px;
   float: right;
 }
-.round-text{
+.round-text {
   font-weight: bold;
   text-align: center;
 }
