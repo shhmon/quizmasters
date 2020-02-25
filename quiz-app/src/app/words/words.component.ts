@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../http.service";
+import { DataServiceService } from "../data-service.service"
 
 @Component({
   selector: "app-words",
@@ -7,7 +8,7 @@ import { HttpService } from "../http.service";
   styleUrls: ["./words.component.css"]
 })
 export class WordsComponent implements OnInit {
-  constructor(private http: HttpService) {
+  constructor(private http: HttpService, private data: DataServiceService) {
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -15,8 +16,14 @@ export class WordsComponent implements OnInit {
   guess: String;
   round = 1;
   successes = 0;
+  message:any;
 
   ngOnInit(): void {
+    this.data.currentMessage.subscribe(message => this.message=message);
+    this.refreshData();
+  }
+
+  refreshData(): void{
     this.http.fetchData().subscribe(data => {
       this.question = JSON.parse(JSON.stringify(data));
     });
@@ -33,11 +40,10 @@ export class WordsComponent implements OnInit {
       }
       this.round += 1;
       setTimeout(() => {
-        this.ngOnInit();
+        this.refreshData();
       }, 1000);
     } else {
-      //routa till highscore
-      //skicka score till localstore
+      this.data.changeMessage(this.successes);
       this.round = 1;
       this.successes = 0;
       this.guess = "";
