@@ -20,3 +20,12 @@
 .definition-card{
   background-color: #FFD740;
 }
+.round-card{
+  width: 55px;
+  height: 17px;
+  float: right;
+}
+.round-text{
+  font-weight: bold;
+  text-align: center;
+}
