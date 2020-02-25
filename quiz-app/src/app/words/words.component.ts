@@ -14,6 +14,7 @@ export class WordsComponent implements OnInit {
 
 	question = {words:[], definition:String, answer:String, score:Number}
 	guess : String;
+  round = 1;
 
   ngOnInit(): void {
       this.http.fetchData().subscribe(data => {
@@ -23,9 +24,8 @@ export class WordsComponent implements OnInit {
 
 
   handleClick(event){
-		if (!this.guess) {
-			this.guess = event.currentTarget.value;
-		}
+		this.guess = event.currentTarget.value;
+    this.round+=1;
   }
 
 }
