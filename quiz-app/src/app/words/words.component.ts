@@ -24,8 +24,14 @@ export class WordsComponent implements OnInit {
 
 
   handleClick(event){
+<<<<<<< HEAD
 		this.guess = event.currentTarget.value;
     this.round+=1;
+=======
+		if (!this.guess) {
+			this.guess = event.currentTarget.value;
+		}
+>>>>>>> 86ce463442cf98c4a8ca0b6d4aef3e8fd9ff3e5f
   }
 
 }
