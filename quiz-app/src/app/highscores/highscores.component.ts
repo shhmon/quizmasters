@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DataServiceService } from "../data-service.service";
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {round: 1, score: 8, time: 11.45, date: '20.02.26'},
+  {score: 8, time: 11.45, date: '20.02.26'},
 
 ];
 
@@ -21,7 +21,7 @@ export class HighscoresComponent implements OnInit {
     console.log(window.localStorage.getItem("scores"));
   }
 
-  displayedColumns: string[] = ['round', 'score', 'time', 'date'];
+  displayedColumns: string[] = ['score', 'time', 'date'];
   dataSource = ELEMENT_DATA;
 
 }
