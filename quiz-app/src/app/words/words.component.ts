@@ -19,6 +19,9 @@ export class WordsComponent implements OnInit {
   message:any;
 
   ngOnInit(): void {
+    this.round = 1;
+    this.successes = 0;
+    this.guess = "";
     this.data.currentMessage.subscribe(message => this.message=message);
     this.refreshData();
   }
@@ -44,9 +47,7 @@ export class WordsComponent implements OnInit {
       }, 1000);
     } else {
       this.data.changeMessage(this.successes);
-      this.round = 1;
-      this.successes = 0;
-      this.guess = "";
+      this.ngOnInit();
     }
   }
 }

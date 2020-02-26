@@ -11,10 +11,12 @@ export class HighscoresComponent implements OnInit {
 
   constructor(private data: DataServiceService) { }
 
-  message: any;
 
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message => this.message=message);
+    this.data.currentMessage.subscribe(message => {
+      window.localStorage.setItem('scores', JSON.stringify(message))
+    });
+    console.log(window.localStorage.getItem('scores'));
   }
 
 }
