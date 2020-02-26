@@ -7,4 +7,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HighscoresComponent implements OnInit {
   constructor() {}
+  displayedColumns: string[] = ["score", "time", "date"];
+  dataSource = JSON.parse(window.localStorage.getItem("scores"));
 }

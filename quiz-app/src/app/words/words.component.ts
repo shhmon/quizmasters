@@ -35,7 +35,8 @@ export class WordsComponent implements OnInit {
     if (this.round < 10) {
       if (!this.guess) {
         this.guess = event.currentTarget.value;
-      } else return;
+			} else return;
+			//@ts-ignore
       if (this.guess === this.question.answer) {
         this.successes += 1;
       }

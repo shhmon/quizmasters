@@ -1,0 +1,10 @@
+.highscore-wrapper {
+  align-items: center;
+  display: flex;
+}
+table {
+  width: 60%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
