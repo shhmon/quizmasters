@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../http.service";
-import { DataServiceService } from "../data-service.service"
+import { DataServiceService } from "../data-service.service";
 
 @Component({
   selector: "app-words",
@@ -16,17 +16,15 @@ export class WordsComponent implements OnInit {
   guess: String;
   round = 1;
   successes = 0;
-  message:any;
 
   ngOnInit(): void {
     this.round = 1;
     this.successes = 0;
     this.guess = "";
-    this.data.currentMessage.subscribe(message => this.message=message);
     this.refreshData();
   }
 
-  refreshData(): void{
+  refreshData(): void {
     this.http.fetchData().subscribe(data => {
       this.question = JSON.parse(JSON.stringify(data));
     });
