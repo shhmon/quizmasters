@@ -8,6 +8,17 @@
   width: 290px;
 }
 
+.start-button-wrapper {
+  text-align: center;
+}
+
+.start-button {
+  width: 500px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
 .words {
   margin: auto;
 }
@@ -20,7 +31,6 @@
 .definition-card {
   background-color: #ffd740;
 }
-
 /* Success styling */
 
 .mat-button.mat-success,
@@ -45,8 +55,9 @@
 }
 .round-card {
   width: 80px;
-  height: 55px;
+  height: 90px;
   float: right;
+  text-align: center;
 }
 .round-text {
   font-weight: bold;
