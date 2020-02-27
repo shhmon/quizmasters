@@ -1,0 +1,18 @@
+<div class="dialog">
+  <h1 mat-dialog-title *ngIf="data">
+    Nice job! You got {{ data.score }} points.
+  </h1>
+  <div mat-dialog-content>
+    <h3>Type in your name to submit your score</h3>
+    <mat-form-field>
+      <mat-label>Your name</mat-label>
+      <input mat-input [(ngModel)]="data.name" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="dialogClose()">Close</button>
+    <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>
+      Submit
+    </button>
+  </div>
+</div>

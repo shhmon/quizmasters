@@ -63,3 +63,11 @@
   font-weight: bold;
   text-align: center;
 }
+.dialog {
+  text-align: center;
+  align-items: flex-end;
+  display: flex;
+}
+.text2 {
+  text-align: center;
+}

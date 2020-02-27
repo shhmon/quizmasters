@@ -9,7 +9,7 @@ import { MatTableDataSource } from "@angular/material/table";
 })
 export class HighscoresComponent implements OnInit {
   constructor() {}
-  displayedColumns: string[] = ["score", "time", "date"];
+  displayedColumns: string[] = ["score", "name", "time", "date"];
   dataSource = new MatTableDataSource(
     JSON.parse(window.localStorage.getItem("scores"))
   );

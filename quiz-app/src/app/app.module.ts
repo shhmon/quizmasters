@@ -16,11 +16,15 @@ import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule } from "@angular/forms";
 
 // App
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { WordsComponent } from "./words/words.component";
+import { WordsComponent, QuizDialog } from "./words/words.component";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HighscoresComponent } from "./highscores/highscores.component";
@@ -35,7 +39,8 @@ const appRoutes: Routes = [
     WordsComponent,
     HeaderComponent,
     FooterComponent,
-    HighscoresComponent
+    HighscoresComponent,
+    QuizDialog
   ],
   imports: [
     BrowserModule,
@@ -51,13 +56,18 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatDividerModule,
     MatTableModule,
+    MatDialogModule,
     MatSortModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [QuizDialog]
 })
 export class AppModule {}

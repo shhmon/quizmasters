@@ -1,8 +1,13 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { HttpService } from "../http.service";
 import { DataServiceService } from "../data-service.service";
 import { Observable, timer } from "rxjs";
 import { take, map } from "rxjs/operators";
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef
+} from "@angular/material/dialog";
 
 @Component({
   selector: "app-words",
@@ -10,7 +15,11 @@ import { take, map } from "rxjs/operators";
   styleUrls: ["./words.component.css"]
 })
 export class WordsComponent implements OnInit {
-  constructor(private http: HttpService, private data: DataServiceService) {
+  constructor(
+    private http: HttpService,
+    private data: DataServiceService,
+    public dialog: MatDialog
+  ) {
     this.handleClick = this.handleClick.bind(this);
     this.startQuiz = this.startQuiz.bind(this);
   }
@@ -46,16 +55,36 @@ export class WordsComponent implements OnInit {
     );
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(QuizDialog, {
+      width: "50%",
+      height: "50%",
+      data: {
+        score: this.successes
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) result = "Unknown player";
+      console.log("The dialog was closed, name: " + result);
+      this.data.changeMessage({ score: this.successes, name: result });
+    });
+  }
+
   newQuestion(): void {
-    this.time = 10;
-    this.startQuiz();
-    ++this.round;
-    this.refreshData();
+    if (this.round > 9) {
+      this.endQuiz();
+    } else {
+      this.time = 10;
+      this.startQuiz();
+      ++this.round;
+      this.refreshData();
+    }
   }
 
   endQuiz() {
-    this.data.changeMessage(this.successes);
     this.started = false;
+    this.openDialog();
     this.ngOnInit();
   }
 
@@ -74,13 +103,34 @@ export class WordsComponent implements OnInit {
     if (this.guess === this.question.answer) {
       this.successes += 1;
     }
-    setTimeout(() => {
-      this.newQuestion();
-    }, 1000);
-    if (this.round === 10) {
+    if (this.round > 2) {
       setTimeout(() => {
         this.endQuiz();
       }, 1000);
+    } else {
+      setTimeout(() => {
+        this.newQuestion();
+      }, 1000);
     }
+  }
+}
+
+export interface DialogData {
+  score: Number;
+  name: String;
+}
+@Component({
+  selector: "quizdialog",
+  templateUrl: "quizdialog.html",
+  styleUrls: ["words.component.css"]
+})
+export class QuizDialog {
+  constructor(
+    public dialogRef: MatDialogRef<QuizDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ) {}
+
+  dialogClose(): void {
+    this.dialogRef.close();
   }
 }
