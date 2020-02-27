@@ -16,7 +16,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 
 // App
 import { AppRoutingModule } from "./app-routing.module";
@@ -54,7 +54,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatDividerModule,
     MatTableModule,
-    MatDialog,
+    MatDialogModule,
     MatSortModule,
     RouterModule.forRoot(
       appRoutes,
