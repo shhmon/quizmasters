@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatSort } from "@angular/material/sort";
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
   selector: "app-highscores",
@@ -8,5 +10,12 @@ import { Component, OnInit } from "@angular/core";
 export class HighscoresComponent implements OnInit {
   constructor() {}
   displayedColumns: string[] = ["score", "time", "date"];
-  dataSource = JSON.parse(window.localStorage.getItem("scores"));
+  dataSource = new MatTableDataSource(
+    JSON.parse(window.localStorage.getItem("scores"))
+  );
+
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  ngOnInit() {
+    this.dataSource.sort = this.sort;
+  }
 }

@@ -13,8 +13,9 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
-import { MatDividerModule } from '@angular/material/divider';
-import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from "@angular/material/divider";
+import { MatTableModule } from "@angular/material/table";
+import { MatSortModule } from "@angular/material/sort";
 
 // App
 import { AppRoutingModule } from "./app-routing.module";
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatDividerModule,
     MatTableModule,
+    MatSortModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
