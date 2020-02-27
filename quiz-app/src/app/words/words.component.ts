@@ -45,6 +45,9 @@ export class WordsComponent implements OnInit {
         this.refreshData();
       }, 1000);
     } else {
+      setTimeout(() => {
+        console.log('');
+      }, 1000);
       this.data.changeMessage(this.successes);
       this.ngOnInit();
     }

@@ -16,6 +16,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
+import { MatDialog } from '@angular/material/dialog';
 
 // App
 import { AppRoutingModule } from "./app-routing.module";
@@ -24,6 +25,7 @@ import { WordsComponent } from "./words/words.component";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HighscoresComponent } from "./highscores/highscores.component";
+import { DialogComponent } from './dialog/dialog.component';
 
 const appRoutes: Routes = [
   { path: "", component: WordsComponent },
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     WordsComponent,
     HeaderComponent,
     FooterComponent,
-    HighscoresComponent
+    HighscoresComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatDividerModule,
     MatTableModule,
+    MatDialog,
     MatSortModule,
     RouterModule.forRoot(
       appRoutes,
