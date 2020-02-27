@@ -65,9 +65,9 @@ export class WordsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (!result) result = "Unknown player";
-      console.log("The dialog was closed, name: " + result);
-      this.data.changeMessage({ score: this.successes, name: result });
+      if (result !== undefined) {
+        this.data.changeMessage({ score: this.successes, name: result });
+      }
     });
   }
 
@@ -130,7 +130,7 @@ export class QuizDialog {
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {}
 
-  dialogClose(): void {
+  onNoClick(): void {
     this.dialogRef.close();
   }
 }

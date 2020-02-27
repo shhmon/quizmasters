@@ -10,8 +10,8 @@
     </mat-form-field>
   </div>
   <div mat-dialog-actions>
-    <button mat-button (click)="dialogClose()">Close</button>
-    <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>
+    <button mat-button (click)="onNoClick()">Close</button>
+    <button mat-button [mat-dialog-close]="data.name" *ngIf="data.name">
       Submit
     </button>
   </div>
