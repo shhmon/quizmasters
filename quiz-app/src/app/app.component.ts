@@ -17,7 +17,7 @@ export class AppComponent {
         localStorage.setItem("scores", JSON.stringify([]));
       }
 
-      if (message.score !== "") {
+      if (message !== "") {
         let timeDate = new Date();
         let scoreObject = {
           score: message.score,
