@@ -17,6 +17,9 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
 
 // App
 import { AppRoutingModule } from "./app-routing.module";
@@ -25,7 +28,6 @@ import { WordsComponent } from "./words/words.component";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HighscoresComponent } from "./highscores/highscores.component";
-import { DialogComponent } from './dialog/dialog.component';
 
 const appRoutes: Routes = [
   { path: "", component: WordsComponent },
@@ -38,7 +40,6 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     HighscoresComponent,
-    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +57,8 @@ const appRoutes: Routes = [
     MatTableModule,
     MatDialogModule,
     MatSortModule,
+    MatInputModule,
+    MatFormFieldModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

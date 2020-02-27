@@ -1,6 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { HttpService } from "../http.service";
 import { DataServiceService } from "../data-service.service";
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: "app-words",
@@ -8,7 +11,7 @@ import { DataServiceService } from "../data-service.service";
   styleUrls: ["./words.component.css"]
 })
 export class WordsComponent implements OnInit {
-  constructor(private http: HttpService, private data: DataServiceService) {
+  constructor(private http: HttpService, private data: DataServiceService, public dialog: MatDialog) {
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -32,7 +35,7 @@ export class WordsComponent implements OnInit {
   }
 
   handleClick(event) {
-    if (this.round < 10) {
+    if (this.round < 3) {
       if (!this.guess) {
         this.guess = event.currentTarget.value;
 			} else return;
@@ -48,8 +51,33 @@ export class WordsComponent implements OnInit {
       setTimeout(() => {
         console.log('');
       }, 1000);
+      this.openDialog();
       this.data.changeMessage(this.successes);
       this.ngOnInit();
     }
   }
+
+  openDialog() {
+    this.dialog.open(DialogDataExampleDialog, {
+    data: {
+    score: this.successes
+  }})}
+
+
+}
+
+export interface DialogData {
+  score: Number;
+}
+
+@Component({
+  selector: 'dialog-data-example-dialog',
+  templateUrl: 'dialog.html'
+})
+export class DialogDataExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  public dialogRef: MatDialogRef<DialogDataExampleDialog>;
+
+
+
 }

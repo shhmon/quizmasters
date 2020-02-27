@@ -52,3 +52,10 @@
   font-weight: bold;
   text-align: center;
 }
+.dialog{
+  align-items: center;
+  display: flex;
+}
+.text2{
+  text-align: center;
+}
