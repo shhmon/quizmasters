@@ -58,7 +58,7 @@ export class WordsComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(QuizDialog, {
       width: "50%",
-      height: "50%",
+      height: "35%",
       data: {
         score: this.successes
       }

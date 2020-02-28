@@ -1,18 +1,23 @@
-<div class="dialog">
-  <h1 mat-dialog-title *ngIf="data">
-    Nice job! You got {{ data.score }} points.
-  </h1>
-  <div mat-dialog-content>
-    <h3>Type in your name to submit your score</h3>
-    <mat-form-field>
-      <mat-label>Your name</mat-label>
-      <input mat-input [(ngModel)]="data.name" />
-    </mat-form-field>
+<div>
+<h2 mat-dialog-title class="titleText">Nice job!</h2>
+
+  <div mat-dialog-content class="dialog">
+    <div>
+      <h3 >Type your name to submit score</h3>
+    </div>
+      <div class="input">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" [(ngModel)]="data.name" />
+        </mat-form-field>
+      </div>
   </div>
-  <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Close</button>
+
+  <div mat-dialog-actions class="dialogButtons" style="display: flex; justify-content: flex-end">
     <button mat-button [mat-dialog-close]="data.name" *ngIf="data.name">
       Submit
+    </button>
+    <button mat-button (click)="onNoClick()">
+      Close
     </button>
   </div>
 </div>
