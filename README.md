@@ -7,8 +7,9 @@
   - score column desribes "normalized" ratio between up and down votes (0 = 50% up votes, 1 = 100% up votes)
 - [x] Create REST API to serve the data (Flask)
 - [x] Wrap this all up in some sexy docker build
-- [ ] Create quiz application with Angular:
+- [x] Create quiz application with Angular:
   - Get definition of word => fetch three similar (or just random) words for user to choose between => get score for guessing right based on up/down vote ratio
+- [ ] Make the score show in highscore tab
 
 **Start the app and server**
 
