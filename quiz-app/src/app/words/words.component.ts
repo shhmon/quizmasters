@@ -103,7 +103,7 @@ export class WordsComponent implements OnInit {
     if (this.guess === this.question.answer) {
       this.successes += 1;
     }
-    if (this.round > 2) {
+    if (this.round > 9) {
       setTimeout(() => {
         this.endQuiz();
       }, 1000);
