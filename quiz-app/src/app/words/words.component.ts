@@ -34,7 +34,6 @@ export class WordsComponent implements OnInit {
 
   ngOnInit(): void {
     this.round = 1;
-    this.successes = 0;
     this.guess = "";
     this.counter$ = new Observable<number>();
     this.refreshData();
@@ -67,6 +66,7 @@ export class WordsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
         this.data.changeMessage({ score: this.successes, name: result });
+        this.successes = 0;
       }
     });
   }
