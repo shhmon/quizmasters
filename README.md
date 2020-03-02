@@ -2,7 +2,7 @@
 **A quiz application for Web Programming course @ LTH**
 
 
-**Start the app and server**
+**Start the app and server with [Docker](https://www.docker.com/products/docker-desktop)**
 
 Run the whole stack at http://localhost:
 
@@ -12,22 +12,28 @@ If you encounter any errors after a pull, run this instead:
 
 `docker-compose up --build --force-recreate server quiz-app`
 
-If you have trouble with node packages not being installed in the container:
+If you have trouble with node packages not being installed in the Angular container:
 
 `docker exec -t -i quizmasters_quiz-app_1 npm install`
 
+**Start the app and server without Docker:**
 
-**How to handle the dataset:**
-
-The dataset is partitioned in /dataset/output in parquet format.
-
-`pip install pandas pyarrow`
+Server:
 
 ```
-from dataset import dataframe
-
-df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])
+cd server
+pip3 install requirements.txt
+python3 app.py
 ```
+
+Angular App:
+
+```
+cd quiz-app
+ng serve --host 0.0.0.0
+```
+
+
 #### To do:
 - [x] Convert urbandict dataset to desired format:
   - [ word_id, word, up_votes, down_votes, definition, score ]
