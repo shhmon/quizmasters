@@ -1,5 +1,5 @@
 # quizmasters
-**A quiz application for Web Programming course @ LTH**
+*A quiz application for Web Programming course @ LTH*
 
 
 **Start the app and server with [Docker](https://www.docker.com/products/docker-desktop)**
