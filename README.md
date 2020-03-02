@@ -1,15 +1,6 @@
 # quizmasters
 **A quiz application for Web Programming course @ LTH**
 
-#### To do:
-- [x] Convert urbandict dataset to desired format:
-  - [ word_id, word, up_votes, down_votes, definition, score ]
-  - score column desribes "normalized" ratio between up and down votes (0 = 50% up votes, 1 = 100% up votes)
-- [x] Create REST API to serve the data (Flask)
-- [x] Wrap this all up in some sexy docker build
-- [x] Create quiz application with Angular:
-  - Get definition of word => fetch three similar (or just random) words for user to choose between => get score for guessing right based on up/down vote ratio
-- [ ] Make the score show in highscore tab
 
 **Start the app and server**
 
@@ -37,3 +28,12 @@ from dataset import dataframe
 
 df = dataframe('dataset/output/*/*.parquet', ['word', 'definition', 'score'])
 ```
+#### To do:
+- [x] Convert urbandict dataset to desired format:
+  - [ word_id, word, up_votes, down_votes, definition, score ]
+  - score column desribes "normalized" ratio between up and down votes (0 = 50% up votes, 1 = 100% up votes)
+- [x] Create REST API to serve the data (Flask)
+- [x] Wrap this all up in a docker build
+- [x] Create quiz application with Angular:
+  - Get definition of word => fetch three similar (or just random) words for user to choose between => get score for guessing right based on up/down vote ratio
+- [x] Make the score show in highscore tab
