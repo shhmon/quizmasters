@@ -2,7 +2,7 @@
 *A quiz application for Web Programming course @ LTH*
 
 
-**Start the app and server with [Docker](https://www.docker.com/products/docker-desktop)**
+**Start the app and server with [Docker](https://www.docker.com/products/docker-desktop):**
 
 Run the whole stack at http://localhost:
 
